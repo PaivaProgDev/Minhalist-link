@@ -1,0 +1,198 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+:root {
+    --clr-dark-primary: #1e1e1e;
+    --clr-dark-secundary: #1e1e1e, #3f3f3f;
+    --clr-gradient-btns: #FF6C22, #FF9209;
+    --clr-gradient-bg-foto: #FF6C22;
+    --clr-name: #FF6C22;
+    --clr-info: #5165AB;
+    --clr-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    cursor: default;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f8ff;
+}
+
+body.dark {
+    background-color: var(--clr-dark-primary);
+}
+
+/* ----- container ----- */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 19rem;
+    margin: 3rem 1.5rem 3rem 1.5rem;
+}
+
+.header-photo-toggle {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.foto-perfil {
+    width: 10rem;
+    background: linear-gradient(10deg, var(--clr-gradient-btns));
+    border: solid 2px var(--clr-dark-primary);
+    border-radius: 50%;
+    animation: flutter 3.5s ease-in-out infinite;
+}
+
+.foto-perfil.borderColor {
+    border-color: var(--clr-white);
+}
+
+@keyframes flutter {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.info-me {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ----- nome e informação ----- */
+.name-title {
+    color: var(--clr-name);
+    text-shadow: 1px 1.3px 3px var(--clr-dark-secundary);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 30px;
+}
+
+.sub-title {
+    color: var(--clr-name);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+/* ----- Links ----- */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.links li {
+    list-style: none;
+    border-radius: 20px;
+    display: flex;
+}
+
+.links li a {
+    text-decoration: none;
+    background: linear-gradient(var(--clr-gradient-btns));
+    padding: 10px 20px;
+    color: white;
+    font-weight: 400;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 5px 1px rgba(66, 66, 66, 0.596);
+    letter-spacing: 1px;
+    width: 100%;
+    transition: all 300ms ease-in-out;
+}
+
+.links li a:hover {
+    transform: scale(1.05);
+    transition: all 300ms ease-in-out;
+}
+
+.input-dark-mode {
+    display: none;
+}
+
+.frame-sound {
+    margin-top: 2rem;
+    border-radius: 10px;
+    border: solid 3px var(--clr-gradient-bg-foto);
+}
+
+/* ----- icones ----- */
+.icon-darkMode,
+.icon-whiteMode {
+    width: 30px;
+}
+
+.icon {
+    width: 20px;
+}
+
+.copyright-footer {
+    color: var(--clr-name);
+    font-size: 13px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.3rem;
+}
+
+/* ----- toggle dark ----- */
+
+.input-dark-mode:checked~.slider-toggle {
+    background-color: var(--clr-white);
+    transition: all 300ms ease-in-out;
+}
+
+.input-dark-mode:checked~.slider-toggle>.button-toggle {
+    background-color: var(--clr-gradient-bg-foto);
+    right: 4px;
+    transition: all 300ms ease-in-out;
+}
+
+.toggle {
+    border-radius: 20px;
+}
+
+.slider-toggle {
+    border-radius: 20px;
+    width: 40px;
+    height: 20px;
+    padding: 4px;
+    position: relative;
+    background-color: var(--clr-dark-primary);
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.button-toggle {
+    pointer-events: none;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--clr-white);
+    background-color: var(--clr-white);
+    border-radius: 20px;
+    border: none;
+    transition: all 300ms ease-in-out;
+}
